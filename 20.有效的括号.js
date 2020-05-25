@@ -9,6 +9,8 @@
  * @param {string} s
  * @return {boolean}
  */
+// 解法一： 暴力法， 循环，匹配下一个元素，如果是有效的括号，就replace成空
+// 解法二： 栈，洋葱式的结构要想到用栈解决问题
 var isValid = function(s) {
   let stack = []
   const map = {
