@@ -117,7 +117,7 @@ var threeSum = function(nums) {
   	let result = []
   	for (let i = 0; i<nums.length;i++) {
   		if (nums[i] > 0) break
-  		if (i > 0 && nums[i] = num[i-1]) continue
+  		if (i > 0 && nums[i] === num[i-1]) continue
   		let L = i + 1,
   			R = nums.length - 1
   		while (L < R) {
