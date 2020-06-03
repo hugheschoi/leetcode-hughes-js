@@ -1,10 +1,3 @@
-/*
- * @lc app=leetcode.cn id=144 lang=javascript
- *
- * [144] 二叉树的前序遍历
- */
-
-// @lc code=start
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -17,7 +10,18 @@
  * @return {number[]}
  */
 var preorderTraversal = function(root) {
-
+  let ans = []
+  function findVal(root) {
+      if (root) {
+          ans.push(root.val)
+          if (root.left) {
+              findVal(root.left)
+          }
+          if (root.right) {
+              findVal(root.right)
+          }
+      }
+  }
+  findVal(root)
+  return ans
 };
-// @lc code=end
-
