@@ -17,7 +17,16 @@
  * @return {ListNode}
  */
 var reverseList = function(head) {
-
+  let cur = null
+  let prev = head
+  let temp
+  while (prev) {
+    temp = prev.next
+    prev.next = cur
+    cur = prev
+    prev = temp
+  }
+  return cur
 };
 // @lc code=end
 

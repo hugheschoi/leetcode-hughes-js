@@ -9,7 +9,8 @@
  * initialize your data structure here.
  */
 var MinStack = function() {
-
+  this.stack = [],
+  this.min = [Infinity]
 };
 
 /** 
@@ -17,28 +18,30 @@ var MinStack = function() {
  * @return {void}
  */
 MinStack.prototype.push = function(x) {
-
+  this.stack.push(x)
+  this.min.push(Math.min(this.min[this.min.length-1], x))
 };
 
 /**
  * @return {void}
  */
 MinStack.prototype.pop = function() {
-
+  this.stack.pop()
+  this.min.pop()
 };
 
 /**
  * @return {number}
  */
 MinStack.prototype.top = function() {
-
+  return this.stack[this.stack.length - 1]
 };
 
 /**
  * @return {number}
  */
 MinStack.prototype.getMin = function() {
-
+  return this.min[this.min.length -1]
 };
 
 /**
