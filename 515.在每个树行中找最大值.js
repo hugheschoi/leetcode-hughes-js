@@ -17,7 +17,29 @@
  * @return {number[]}
  */
 var largestValues = function(root) {
-
+  let queue = []
+  const res = []
+  if (root) {
+    queue.push(root)
+  }
+  while(queue.length) {
+    // 循环queue，找到最大值存入res中
+    let children = []
+    let max = queue[0].val
+    for (let i = 0; i < queue.length; i++) {
+      const curr = queue[i]
+      if (curr.left) {
+        children.push(curr.left)
+      }
+      if (curr.right) {
+        children.push(curr.right)
+      }
+      max = Math.max(max, curr.val)
+    }
+    res.push(max)
+    queue = children
+  }
+  return res
 };
 // @lc code=end
 
